@@ -81,6 +81,7 @@ endif()
 
 if(SIMD_USE_OPENMP)
 	add_definitions(-DSIMD_USE_OPENMP)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -mavx2 -msse2 -fopenmp-simd -fopenmp -ffast-math")
 endif()
 
 include_directories("${SIMD_ROOT}/src")
