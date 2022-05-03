@@ -63,9 +63,8 @@ namespace Simd
             assert(width >= A);
             if (align)
                 assert(Aligned(gray) && Aligned(grayStride) && Aligned(bgr) && Aligned(bgrStride));
-
             size_t alignedWidth = AlignLo(width, A);
-#ifdef SIMD_USE_OPENMP            
+#ifdef SIMD_USE_OPENMP
     #pragma omp parallel for
 #endif
             for (size_t row = 0; row < height; ++row)
@@ -74,6 +73,9 @@ namespace Simd
                     Store<align>((__m256i*)(gray + col), BgrToGray<align>(bgr + 3 * col));
                 if (width != alignedWidth)
                     Store<false>((__m256i*)(gray + width - A), BgrToGray<false>(bgr + 3 * (width - A)));
+#ifdef SIMD_USE_OPENMP
+    #pragma omp critical
+#endif
                 bgr += bgrStride;
                 gray += grayStride;
             }
@@ -133,6 +135,9 @@ namespace Simd
                     Store<align>((__m256i*)(gray + col), RgbToGray<align>(rgb + 3 * col));
                 if (width != alignedWidth)
                     Store<false>((__m256i*)(gray + width - A), RgbToGray<false>(rgb + 3 * (width - A)));
+#ifdef SIMD_USE_OPENMP
+    #pragma omp critical
+#endif
                 rgb += rgbStride;
                 gray += grayStride;
             }
