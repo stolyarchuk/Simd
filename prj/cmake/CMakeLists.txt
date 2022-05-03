@@ -92,12 +92,12 @@ endif()
 
 string(REGEX REPLACE "(-march=[a-zA-Z0-9-]*)|(-mtune=[a-zA-Z0-9-]*)|(-msse[0-9,\\.]*)|(-mavx[0-9]*)|(-mfma)" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
-    set(COMMON_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11 -O3")
-elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(COMMON_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11 -O0 -g")
+if(CMAKE_BUILD_TYPE MATCHES "Release|RELEASE")
+  set(COMMON_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11 -O3")
+elseif(CMAKE_BUILD_TYPE MATCHES "Debug|DEBUG")
+  set(COMMON_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11 -O0 -g")
 else()
-    message(FATAL_ERROR "Unknown value of CMAKE_BUILD_TYPE!")
+  message(FATAL_ERROR "Unknown value of CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}!")
 endif()
 
 if((CMAKE_CXX_COMPILER MATCHES "clang") OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
