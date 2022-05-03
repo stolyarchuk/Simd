@@ -63,6 +63,9 @@ namespace Simd
             {
                 Base::BgrToBgra(bgr, width, buffer.bgra, false, false, 0xFF);
                 Sse2::BgraToGray(buffer.bgra, width, 1, 4 * width, gray, width);
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp critical
+#endif                
                 bgr += bgrStride;
                 gray += grayStride;
             }
