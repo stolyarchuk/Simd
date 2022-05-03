@@ -154,8 +154,8 @@ namespace Simd
                     alpha = 1;
                 }
 
-                int dst = 2 * dstIndex - indexes[block].dst;
-                int src = srcIndex - indexes[block].src;
+                std::size_t dst = 2 * dstIndex - indexes[block].dst;
+                std::size_t src = srcIndex - indexes[block].src;
                 if (src >= Avx2::A - 1 || dst >= Avx2::A)
                 {
                     block++;

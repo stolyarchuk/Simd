@@ -124,6 +124,17 @@ namespace Simd
                 \return a reference to the pixel.
             */
             template <template<class> class A> static Bgr24 & At(View<A> & view, ptrdiff_t col, ptrdiff_t row);
+            
+            Bgr24 & operator=(const Bgr24 & p)
+            {
+                if (this != &p)
+                {
+                    blue = p.blue;
+                    green = p.green;
+                    red = p.red;
+                }
+                return *this;
+            }
         };
 
         /*! @ingroup cpp_pixels
@@ -210,6 +221,18 @@ namespace Simd
                 \return a reference to the pixel.
             */
             template <template<class> class A> static Bgra32 & At(View<A> & view, ptrdiff_t col, ptrdiff_t row);
+            
+            Bgra32 & operator=(const Bgra32 & p)
+            {
+                if (this != &p)
+                {
+                    blue = p.blue;
+                    green = p.green;
+                    red = p.red;
+                    alpha = p.alpha;
+                }
+                return *this;
+            }
         };
 
         /*! @ingroup cpp_pixels
@@ -412,6 +435,22 @@ namespace Simd
                 \return a reference to the pixel.
             */
             template <template<class> class A> static Rgb24 & At(View<A> & view, ptrdiff_t col, ptrdiff_t row);
+            
+            /*!
+                Copy Assignment
+
+                \param [in] p - 24-bit RGB pixel.
+            */
+            Rgb24 & operator=(const Rgb24 & p)
+            {
+                if (this != &p)
+                {
+                    red = p.red;
+                    green = p.green;
+                    blue = p.blue;
+                }
+                return *this;
+            }
         };
 
         /*! @ingroup cpp_pixels
@@ -498,6 +537,23 @@ namespace Simd
                 \return a reference to the pixel.
             */
             template <template<class> class A> static Rgba32& At(View<A>& view, ptrdiff_t col, ptrdiff_t row);
+            
+            /*!
+                Copy Assignment
+
+                \param [in] p - 32-bit RGB pixel.
+            */
+            Rgba32 & operator=(const Rgba32 & p)
+            {
+                if (this != &p)
+                {
+                    red = p.red;
+                    green = p.green;
+                    blue = p.blue;
+                    alpha = p.alpha;
+                }
+                return *this;
+            }
         };
 
         //-------------------------------------------------------------------------

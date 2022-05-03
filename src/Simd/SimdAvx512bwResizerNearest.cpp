@@ -58,8 +58,8 @@ namespace Simd
                 for (int dstIndex = 0; dstIndex < (int)_param.dstW; ++dstIndex)
                 {
                     int srcIndex = _ix[dstIndex] / (int)pixelSize;
-                    int dst = dstIndex * (int)pixelSize - _ix32x2[block].dst;
-                    int src = srcIndex * (int)pixelSize - _ix32x2[block].src;
+                    std::size_t dst = dstIndex * (int)pixelSize - _ix32x2[block].dst;
+                    std::size_t src = srcIndex * (int)pixelSize - _ix32x2[block].src;
                     if (src >= A - pixelSize || dst >= A - pixelSize)
                     {
                         block++;

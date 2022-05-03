@@ -1041,6 +1041,7 @@ namespace Simd
             default:
                 assert(0);
             }
+            break;
 
         case Frame<A>::Rgba32:
             switch (dst.format)

@@ -458,6 +458,17 @@ namespace Simd
             {
                 return width * height * depth;
             }
+            
+            SIMD_INLINE Index & operator=(const Index & i)
+            {
+                if(this != &i)
+                {
+                    width = i.width;
+                    height = i.height;
+                    depth = i.depth;
+                }
+                return *this;
+            }
         };
 
         /*! @ingroup cpp_neural
