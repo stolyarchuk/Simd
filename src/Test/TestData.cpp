@@ -110,7 +110,7 @@ namespace Test
             }
             ofs << std::endl;
         }
-        catch (std::exception e)
+        catch (const std::exception& e)
         {
             TEST_LOG_SS(Error, "Can't save array to file '" << path << "', because there is an exception: " << e.what());
             ofs.close();
@@ -154,7 +154,7 @@ namespace Test
                     ifs >> data[i];
             }
         }
-        catch (std::exception e)
+        catch (const std::exception& e)
         {
             TEST_LOG_SS(Error, "Can't load array from file '" << path << "', because there is an exception: " << e.what());
             ifs.close();
@@ -245,7 +245,7 @@ namespace Test
                 }
             }
         }
-        catch (std::exception e)
+        catch (const std::exception& e)
         {
             TEST_LOG_SS(Error, "Can't save image to file '" << path << "', because there is an exception: " << e.what());
             ofs.close();
@@ -321,7 +321,7 @@ namespace Test
                 }
             }
         }
-        catch (std::exception e)
+        catch (const std::exception& e)
         {
             TEST_LOG_SS(Error, "Can't load image from file '" << path << "', because there is an exception: " << e.what());
             ifs.close();

@@ -120,17 +120,17 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Base::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::DA)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Sse2::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Sse41::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Avx2::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 #endif
 
@@ -140,12 +140,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::DA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Vmx::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 2, FUNC_YUVO(Simd::Neon::BgraToYuv420p), FUNC_YUVO(SimdBgraToYuv420p));
 #endif
 
@@ -159,17 +159,17 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Base::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::DA)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Sse2::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Sse41::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Avx2::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 #endif
 
@@ -179,12 +179,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::DA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Vmx::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && AnyToYuvAutoTest(View::Bgra32, 2, 1, FUNC_YUVO(Simd::Neon::BgraToYuv422p), FUNC_YUVO(SimdBgraToYuv422p));
 #endif
 
@@ -198,12 +198,12 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgra32, 1, 1, FUNC_YUVO(Simd::Base::BgraToYuv444p), FUNC_YUVO(SimdBgraToYuv444p));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && AnyToYuvAutoTest(View::Bgra32, 1, 1, FUNC_YUVO(Simd::Sse2::BgraToYuv444p), FUNC_YUVO(SimdBgraToYuv444p));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && AnyToYuvAutoTest(View::Bgra32, 1, 1, FUNC_YUVO(Simd::Avx2::BgraToYuv444p), FUNC_YUVO(SimdBgraToYuv444p));
 #endif
 
@@ -213,12 +213,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::A)
             result = result && AnyToYuvAutoTest(View::Bgra32, 1, 1, FUNC_YUVO(Simd::Vmx::BgraToYuv444p), FUNC_YUVO(SimdBgraToYuv444p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && AnyToYuvAutoTest(View::Bgra32, 1, 1, FUNC_YUVO(Simd::Neon::BgraToYuv444p), FUNC_YUVO(SimdBgraToYuv444p));
 #endif
 
@@ -232,12 +232,12 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgr24, 2, 2, FUNC_YUVO(Simd::Base::BgrToYuv420p), FUNC_YUVO(SimdBgrToYuv420p));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 2, FUNC_YUVO(Simd::Sse41::BgrToYuv420p), FUNC_YUVO(SimdBgrToYuv420p));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 2, FUNC_YUVO(Simd::Avx2::BgrToYuv420p), FUNC_YUVO(SimdBgrToYuv420p));
 #endif
 
@@ -247,12 +247,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::DA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 2, FUNC_YUVO(Simd::Vmx::BgrToYuv420p), FUNC_YUVO(SimdBgrToYuv420p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 2, FUNC_YUVO(Simd::Neon::BgrToYuv420p), FUNC_YUVO(SimdBgrToYuv420p));
 #endif
 
@@ -266,12 +266,12 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgr24, 2, 1, FUNC_YUVO(Simd::Base::BgrToYuv422p), FUNC_YUVO(SimdBgrToYuv422p));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 1, FUNC_YUVO(Simd::Sse41::BgrToYuv422p), FUNC_YUVO(SimdBgrToYuv422p));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 1, FUNC_YUVO(Simd::Avx2::BgrToYuv422p), FUNC_YUVO(SimdBgrToYuv422p));
 #endif
 
@@ -281,12 +281,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::DA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 1, FUNC_YUVO(Simd::Vmx::BgrToYuv422p), FUNC_YUVO(SimdBgrToYuv422p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && AnyToYuvAutoTest(View::Bgr24, 2, 1, FUNC_YUVO(Simd::Neon::BgrToYuv422p), FUNC_YUVO(SimdBgrToYuv422p));
 #endif
 
@@ -300,12 +300,12 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Bgr24, 1, 1, FUNC_YUVO(Simd::Base::BgrToYuv444p), FUNC_YUVO(SimdBgrToYuv444p));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A)
             result = result && AnyToYuvAutoTest(View::Bgr24, 1, 1, FUNC_YUVO(Simd::Sse41::BgrToYuv444p), FUNC_YUVO(SimdBgrToYuv444p));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && AnyToYuvAutoTest(View::Bgr24, 1, 1, FUNC_YUVO(Simd::Avx2::BgrToYuv444p), FUNC_YUVO(SimdBgrToYuv444p));
 #endif
 
@@ -315,12 +315,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::A)
             result = result && AnyToYuvAutoTest(View::Bgr24, 1, 1, FUNC_YUVO(Simd::Vmx::BgrToYuv444p), FUNC_YUVO(SimdBgrToYuv444p));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && AnyToYuvAutoTest(View::Bgr24, 1, 1, FUNC_YUVO(Simd::Neon::BgrToYuv444p), FUNC_YUVO(SimdBgrToYuv444p));
 #endif
 
@@ -334,12 +334,12 @@ namespace Test
         result = result && AnyToYuvAutoTest(View::Uyvy16, 2, 2, FUNC_YUVN(Simd::Base::Uyvy422ToYuv420p), FUNC_YUVN(SimdUyvy422ToYuv420p));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && AnyToYuvAutoTest(View::Uyvy16, 2, 2, FUNC_YUVN(Simd::Sse41::Uyvy422ToYuv420p), FUNC_YUVN(SimdUyvy422ToYuv420p));
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && AnyToYuvAutoTest(View::Uyvy16, 2, 2, FUNC_YUVN(Simd::Avx2::Uyvy422ToYuv420p), FUNC_YUVN(SimdUyvy422ToYuv420p));
 #endif
 
@@ -534,17 +534,17 @@ namespace Test
         result = result && BgraToYuvaAutoTest(FUNC_YUVA(Simd::Base::BgraToYuva420p), FUNC_YUVA(SimdBgraToYuva420p));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::DA)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::DA)
             result = result && BgraToYuvaAutoTest(FUNC_YUVA(Simd::Sse2::BgraToYuva420p), FUNC_YUVA(SimdBgraToYuva420p));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::DA)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::DA)
             result = result && BgraToYuvaAutoTest(FUNC_YUVA(Simd::Sse41::BgraToYuva420p), FUNC_YUVA(SimdBgraToYuva420p));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && BgraToYuvaAutoTest(FUNC_YUVA(Simd::Avx2::BgraToYuva420p), FUNC_YUVA(SimdBgraToYuva420p));
 #endif
 
@@ -554,7 +554,7 @@ namespace Test
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && BgraToYuvaAutoTest(FUNC_YUVA(Simd::Neon::BgraToYuva420p), FUNC_YUVA(SimdBgraToYuva420p));
 #endif
 

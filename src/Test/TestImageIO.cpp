@@ -287,7 +287,7 @@ namespace Test
         bool result = true;
 
         std::vector<View::Format> formats({ View::Gray8, View::Bgr24, View::Bgra32, View::Rgb24, View::Rgba32});
-        for (int format = 0; format < formats.size(); format++)
+        for (std::size_t format = 0; format < formats.size(); format++)
         {
             for (int file = (int)SimdImageFileJpeg; file <= (int)SimdImageFileJpeg; file++)
             {

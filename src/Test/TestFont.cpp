@@ -208,7 +208,7 @@ namespace Test
         {
             Color * row = image.Row<Color>(y);
             for (size_t x = 0; x < image.width; ++x)
-                row[x] = Color(255, (uint8_t)x, (uint8_t)y);
+                row[x] = Color(255, static_cast<std::uint8_t>(x), static_cast<std::uint8_t>(y));
         }
 
         String text = "First_string,\nSecond-line.";

@@ -91,27 +91,27 @@ namespace Test
         result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Base::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W > Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) > Simd::Sse41::A)
             result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Sse41::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W > Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) > Simd::Avx2::A)
             result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Avx2::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 #endif 
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W > Simd::Avx512bw::A)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) > Simd::Avx512bw::A)
             result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Avx512bw::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 #endif 
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W > Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) > Simd::Vmx::A)
             result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Vmx::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W > Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) > Simd::Neon::A)
             result = result && ContourMetricsMaskedAutoTest(FUNC_M(Simd::Neon::ContourMetricsMasked), FUNC_M(SimdContourMetricsMasked));
 #endif
 
@@ -181,27 +181,27 @@ namespace Test
         result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Base::ContourAnchors), FUNC_A(SimdContourAnchors));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W > Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) > Simd::Sse2::A)
             result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Sse2::ContourAnchors), FUNC_A(SimdContourAnchors));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W > Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) > Simd::Avx2::A)
             result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Avx2::ContourAnchors), FUNC_A(SimdContourAnchors));
 #endif 
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W > Simd::Avx512bw::A)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) > Simd::Avx512bw::A)
             result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Avx512bw::ContourAnchors), FUNC_A(SimdContourAnchors));
 #endif 
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W > Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) > Simd::Vmx::A)
             result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Vmx::ContourAnchors), FUNC_A(SimdContourAnchors));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W > Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) > Simd::Neon::A)
             result = result && ContourAnchorsAutoTest(FUNC_A(Simd::Neon::ContourAnchors), FUNC_A(SimdContourAnchors));
 #endif
 

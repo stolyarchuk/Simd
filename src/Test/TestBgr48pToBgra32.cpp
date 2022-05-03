@@ -92,12 +92,12 @@ namespace Test
         result = result && Bgr48pToBgra32AutoTest(FUNC(Simd::Base::Bgr48pToBgra32), FUNC(SimdBgr48pToBgra32));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::HA)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::HA)
             result = result && Bgr48pToBgra32AutoTest(FUNC(Simd::Sse2::Bgr48pToBgra32), FUNC(SimdBgr48pToBgra32));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::HA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::HA)
             result = result && Bgr48pToBgra32AutoTest(FUNC(Simd::Avx2::Bgr48pToBgra32), FUNC(SimdBgr48pToBgra32));
 #endif 
 
@@ -107,12 +107,12 @@ namespace Test
 #endif 
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::HA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::HA)
             result = result && Bgr48pToBgra32AutoTest(FUNC(Simd::Vmx::Bgr48pToBgra32), FUNC(SimdBgr48pToBgra32));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::HA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::HA)
             result = result && Bgr48pToBgra32AutoTest(FUNC(Simd::Neon::Bgr48pToBgra32), FUNC(SimdBgr48pToBgra32));
 #endif
 

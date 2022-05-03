@@ -90,22 +90,22 @@ namespace Test
         result = result && BayerToBgrAutoTest(FUNC(Simd::Base::BayerToBgr), FUNC(SimdBayerToBgr));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A + 2)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A + 2)
             result = result && BayerToBgrAutoTest(FUNC(Simd::Sse41::BayerToBgr), FUNC(SimdBayerToBgr));
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A + 2)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A + 2)
             result = result && BayerToBgrAutoTest(FUNC(Simd::Avx2::BayerToBgr), FUNC(SimdBayerToBgr));
 #endif
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W >= Simd::Avx512bw::A + 2)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) >= Simd::Avx512bw::A + 2)
             result = result && BayerToBgrAutoTest(FUNC(Simd::Avx512bw::BayerToBgr), FUNC(SimdBayerToBgr));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A + 2)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A + 2)
             result = result && BayerToBgrAutoTest(FUNC(Simd::Neon::BayerToBgr), FUNC(SimdBayerToBgr));
 #endif 
 
