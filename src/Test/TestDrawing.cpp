@@ -98,17 +98,17 @@ namespace Test
         result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Base::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Sse2::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A)
             result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Sse41::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Avx2::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 #endif 
 
@@ -118,12 +118,12 @@ namespace Test
 #endif 
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::A)
             result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Vmx::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && AlphaBlendingAutoTest(FUNC_AB(Simd::Neon::AlphaBlending), FUNC_AB(SimdAlphaBlending));
 #endif
 
@@ -201,12 +201,12 @@ namespace Test
         result = result && AlphaBlendingUniformAutoTest(FUNC_ABU(Simd::Base::AlphaBlendingUniform), FUNC_ABU(SimdAlphaBlendingUniform));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && AlphaBlendingUniformAutoTest(FUNC_ABU(Simd::Sse2::AlphaBlendingUniform), FUNC_ABU(SimdAlphaBlendingUniform));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && AlphaBlendingUniformAutoTest(FUNC_ABU(Simd::Avx2::AlphaBlendingUniform), FUNC_ABU(SimdAlphaBlendingUniform));
 #endif 
 
@@ -216,7 +216,7 @@ namespace Test
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && AlphaBlendingUniformAutoTest(FUNC_ABU(Simd::Neon::AlphaBlendingUniform), FUNC_ABU(SimdAlphaBlendingUniform));
 #endif
 
@@ -295,17 +295,17 @@ namespace Test
         result = result && AlphaFillingAutoTest(FUNC_AF(Simd::Base::AlphaFilling), FUNC_AF(SimdAlphaFilling));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && AlphaFillingAutoTest(FUNC_AF(Simd::Sse2::AlphaFilling), FUNC_AF(SimdAlphaFilling));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A)
             result = result && AlphaFillingAutoTest(FUNC_AF(Simd::Sse41::AlphaFilling), FUNC_AF(SimdAlphaFilling));
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && AlphaFillingAutoTest(FUNC_AF(Simd::Avx2::AlphaFilling), FUNC_AF(SimdAlphaFilling));
 #endif
 
@@ -315,7 +315,7 @@ namespace Test
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && AlphaFillingAutoTest(FUNC_AF(Simd::Neon::AlphaFilling), FUNC_AF(SimdAlphaFilling));
 #endif
 

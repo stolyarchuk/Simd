@@ -144,22 +144,22 @@ namespace Test
         result = result && TransformImageAutoTest(FUNC_TI(Simd::Base::TransformImage), FUNC_TI(SimdTransformImage));
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && TransformImageAutoTest(FUNC_TI(Simd::Avx512bw::TransformImage), FUNC_TI(SimdTransformImage));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && TransformImageAutoTest(FUNC_TI(Simd::Avx2::TransformImage), FUNC_TI(SimdTransformImage));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A)
             result = result && TransformImageAutoTest(FUNC_TI(Simd::Sse41::TransformImage), FUNC_TI(SimdTransformImage));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::HA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::HA)
             result = result && TransformImageAutoTest(FUNC_TI(Simd::Neon::TransformImage), FUNC_TI(SimdTransformImage));
 #endif 
 

@@ -227,7 +227,7 @@ namespace Test
 
         TEST_LOG_SS(Info, "Test " << f1.description << " & " << f2.description << " [" << srcW << ", " << srcH << "] -> [" << dstW << ", " << dstH << "].");
 
-        View::Format format;
+        View::Format format{};
         if (type == SimdResizeChannelFloat)
         {
             format = View::Float;

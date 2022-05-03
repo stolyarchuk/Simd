@@ -304,32 +304,32 @@ namespace Test
         result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Base::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W > Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Sse2::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W > Simd::Sse41::A)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Sse41::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W > Simd::Avx2::DA)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::DA)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Avx2::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W > Simd::Avx512bw::DA)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) >= Simd::Avx512bw::DA)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Avx512bw::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W > Simd::Vmx::DA)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::DA)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Vmx::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W > Simd::Neon::DA)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::DA)
             result = result && ReduceGrayAutoTest(FUNC_RG1(Simd::Neon::ReduceGray4x4), FUNC_RG1(SimdReduceGray4x4));
 #endif 
 

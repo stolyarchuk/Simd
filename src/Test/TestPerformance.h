@@ -47,6 +47,22 @@ namespace Test
     public:
         PerformanceMeasurer(const String & description = "Unnamed");
         PerformanceMeasurer(const PerformanceMeasurer & pm);
+        
+        PerformanceMeasurer & operator=(const PerformanceMeasurer & p)
+        {
+            if (this != &p)
+            {
+                _description = p._description;
+                _start = p._start;
+                _count = p._count;
+                _total = p._total;
+                _min = p._min;
+                _max = p._max;
+                _entered = p._entered;
+                _size = p._size;
+            }
+            return *this;
+        }
 
         void Enter();
         void Leave(size_t size = 1);

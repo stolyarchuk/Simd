@@ -1665,17 +1665,17 @@ namespace Test
         result = result && NeuralPoolingMaxAutoTest(stride, pooling, pad, EPS, FUNC_M(Simd::Base::NeuralPooling2x2Max2x2), FUNC_M(SimdNeuralPooling2x2Max2x2));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::DF)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::DF)
             result = result && NeuralPoolingMaxAutoTest(stride, pooling, pad, EPS, FUNC_M(Simd::Sse2::NeuralPooling2x2Max2x2), FUNC_M(SimdNeuralPooling2x2Max2x2));
 #endif 
 
 #ifdef SIMD_AVX_ENABLE
-        if (Simd::Avx::Enable && W >= Simd::Avx::DF)
+        if (Simd::Avx::Enable && static_cast<std::size_t>(W) >= Simd::Avx::DF)
             result = result && NeuralPoolingMaxAutoTest(stride, pooling, pad, EPS, FUNC_M(Simd::Avx::NeuralPooling2x2Max2x2), FUNC_M(SimdNeuralPooling2x2Max2x2));
 #endif
 
 #ifdef SIMD_AVX512F_ENABLE
-        if (Simd::Avx512f::Enable && W >= Simd::Avx512f::DF)
+        if (Simd::Avx512f::Enable && static_cast<std::size_t>(W) >= Simd::Avx512f::DF)
             result = result && NeuralPoolingMaxAutoTest(stride, pooling, pad, EPS, FUNC_M(Simd::Avx512f::NeuralPooling2x2Max2x2), FUNC_M(SimdNeuralPooling2x2Max2x2));
 #endif
 

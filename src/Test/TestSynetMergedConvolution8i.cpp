@@ -78,10 +78,10 @@ namespace Test
         private:
             static void SetConv(SimdConvolutionParameters* conv, const Cnv & c, const Shape & s = Shape())
             {
-                conv[0].srcC = s.empty() ? conv[-1].dstC : s[1];
-                conv[0].srcH = s.empty() ? conv[-1].dstH : s[2];
-                conv[0].srcW = s.empty() ? conv[-1].dstW : s[3];
-                conv[0].dstC = c.d == -1 ? conv[0].srcC : c.d;
+                conv[0].srcC = s.empty() ? conv[-1].dstC : s[1]; //TODO: inspect out of bounds
+                conv[0].srcH = s.empty() ? conv[-1].dstH : s[2]; //TODO: inspect out of bounds
+                conv[0].srcW = s.empty() ? conv[-1].dstW : s[3]; //TODO: inspect out of bounds
+                conv[0].dstC = c.d == -1 ? conv[0].srcC : c.d; //TODO: inspect comparison
                 conv[0].kernelY = c.k;
                 conv[0].kernelX = c.k;
                 conv[0].dilationY = 1;
@@ -92,7 +92,7 @@ namespace Test
                 conv[0].padX = c.s == 1 || (conv[0].srcW & 1) ? (c.k - 1) / 2 : (c.k - 1) / 2 - 1;
                 conv[0].padH = (c.k - 1) / 2;
                 conv[0].padW = (c.k - 1) / 2;
-                conv[0].group = c.d == -1 ? conv[0].srcC : 1;
+                conv[0].group = c.d == -1 ? conv[0].srcC : 1; //TODO: inspect comparison
                 conv[0].activation = c.a;
                 conv[0].dstH = (conv[0].srcH + conv[0].padY + conv[0].padH - conv[0].kernelY) / conv[0].strideY + 1;
                 conv[0].dstW = (conv[0].srcW + conv[0].padX + conv[0].padW - conv[0].kernelX) / conv[0].strideX + 1;

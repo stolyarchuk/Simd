@@ -326,9 +326,9 @@ namespace Test
 
         typedef std::vector<Type, Simd::Allocator<Type>> Vector;
 
-        SimdTensorFormatType _format;
-        Test::Shape _shape;
         size_t _size;
+        Test::Shape _shape;
+        SimdTensorFormatType _format;
         Vector _data;
     };
 

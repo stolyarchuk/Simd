@@ -337,7 +337,9 @@ namespace Test
 		size_t col = 0, last = 0;
         for (size_t i = 0; i < enable.Size(); ++i)
             if (enable[i])
+            {
                 last = i;
+            }
 		table.SetHeader(col++, "Function", true);
 		for (size_t i = 0; i < enable.Size(); ++i)
 			if (enable[i])

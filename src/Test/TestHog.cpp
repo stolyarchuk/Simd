@@ -91,32 +91,32 @@ namespace Test
         result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Base::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A + 2)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Sse2::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif 
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A + 2)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Sse41::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A + 2)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Avx2::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif 
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W >= Simd::Avx512bw::HA + 2)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) >= Simd::Avx512bw::HA + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Avx512bw::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif 
 
 #ifdef SIMD_VSX_ENABLE
-        if (Simd::Vsx::Enable && W >= Simd::Vsx::A + 2)
+        if (Simd::Vsx::Enable && static_cast<std::size_t>(W) >= Simd::Vsx::A + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Vsx::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A + 2)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A + 2)
             result = result && HogDirectionHistogramsAutoTest(FUNC_HDH(Simd::Neon::HogDirectionHistograms), FUNC_HDH(SimdHogDirectionHistograms));
 #endif
 
@@ -185,22 +185,22 @@ namespace Test
         result = result && HogExtractFeaturesAutoTest(FUNC_HEF(Simd::Base::HogExtractFeatures), FUNC_HEF(SimdHogExtractFeatures));
 
 #ifdef SIMD_SSE41_ENABLE
-        if (Simd::Sse41::Enable && W >= Simd::Sse41::A + 2)
+        if (Simd::Sse41::Enable && static_cast<std::size_t>(W) >= Simd::Sse41::A + 2)
             result = result && HogExtractFeaturesAutoTest(FUNC_HEF(Simd::Sse41::HogExtractFeatures), FUNC_HEF(SimdHogExtractFeatures));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::HA + 2)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::HA + 2)
             result = result && HogExtractFeaturesAutoTest(FUNC_HEF(Simd::Avx2::HogExtractFeatures), FUNC_HEF(SimdHogExtractFeatures));
 #endif 
 
 #ifdef SIMD_AVX512BW_ENABLE
-        if (Simd::Avx512bw::Enable && W >= Simd::Avx512bw::HA + 2)
+        if (Simd::Avx512bw::Enable && static_cast<std::size_t>(W) >= Simd::Avx512bw::HA + 2)
             result = result && HogExtractFeaturesAutoTest(FUNC_HEF(Simd::Avx512bw::HogExtractFeatures), FUNC_HEF(SimdHogExtractFeatures));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A + 2)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A + 2)
             result = result && HogExtractFeaturesAutoTest(FUNC_HEF(Simd::Neon::HogExtractFeatures), FUNC_HEF(SimdHogExtractFeatures));
 #endif 
 

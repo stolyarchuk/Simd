@@ -235,12 +235,12 @@ namespace Test
         result = result && FillBgraAutoTest(FUNC_BGRA(Simd::Base::FillBgra), FUNC_BGRA(SimdFillBgra));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::F)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::F)
             result = result && FillBgraAutoTest(FUNC_BGRA(Simd::Sse2::FillBgra), FUNC_BGRA(SimdFillBgra));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::F)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::F)
             result = result && FillBgraAutoTest(FUNC_BGRA(Simd::Avx2::FillBgra), FUNC_BGRA(SimdFillBgra));
 #endif 
 
@@ -250,12 +250,12 @@ namespace Test
 #endif
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::F)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::F)
             result = result && FillBgraAutoTest(FUNC_BGRA(Simd::Vmx::FillBgra), FUNC_BGRA(SimdFillBgra));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::F)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::F)
             result = result && FillBgraAutoTest(FUNC_BGRA(Simd::Neon::FillBgra), FUNC_BGRA(SimdFillBgra));
 #endif 
 
@@ -323,12 +323,12 @@ namespace Test
         result = result && FillBgrAutoTest(FUNC_BGR(Simd::Base::FillBgr), FUNC_BGR(SimdFillBgr));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && FillBgrAutoTest(FUNC_BGR(Simd::Sse2::FillBgr), FUNC_BGR(SimdFillBgr));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && FillBgrAutoTest(FUNC_BGR(Simd::Avx2::FillBgr), FUNC_BGR(SimdFillBgr));
 #endif 
 
@@ -338,12 +338,12 @@ namespace Test
 #endif 
 
 #ifdef SIMD_VMX_ENABLE
-        if (Simd::Vmx::Enable && W >= Simd::Vmx::A)
+        if (Simd::Vmx::Enable && static_cast<std::size_t>(W) >= Simd::Vmx::A)
             result = result && FillBgrAutoTest(FUNC_BGR(Simd::Vmx::FillBgr), FUNC_BGR(SimdFillBgr));
 #endif 
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && FillBgrAutoTest(FUNC_BGR(Simd::Neon::FillBgr), FUNC_BGR(SimdFillBgr));
 #endif 
 
@@ -417,12 +417,12 @@ namespace Test
         result = result && FillPixelAutoTest(FUNC_FP(Simd::Base::FillPixel), FUNC_FP(SimdFillPixel));
 
 #ifdef SIMD_SSE2_ENABLE
-        if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+        if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
             result = result && FillPixelAutoTest(FUNC_FP(Simd::Sse2::FillPixel), FUNC_FP(SimdFillPixel));
 #endif 
 
 #ifdef SIMD_AVX2_ENABLE
-        if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+        if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
             result = result && FillPixelAutoTest(FUNC_FP(Simd::Avx2::FillPixel), FUNC_FP(SimdFillPixel));
 #endif
 
@@ -432,7 +432,7 @@ namespace Test
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-        if (Simd::Neon::Enable && W >= Simd::Neon::A)
+        if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
             result = result && FillPixelAutoTest(FUNC_FP(Simd::Neon::FillPixel), FUNC_FP(SimdFillPixel));
 #endif 
 

@@ -92,12 +92,12 @@ namespace Test
 		result = result && AbsDifferenceAutoTest(FUNC1(Simd::Base::AbsDifference), FUNC1(SimdAbsDifference), 1);
 
 #ifdef SIMD_SSE2_ENABLE
-		if (Simd::Sse2::Enable && W >= Simd::Sse2::A)
+		if (Simd::Sse2::Enable && static_cast<std::size_t>(W) >= Simd::Sse2::A)
 			result = result && AbsDifferenceAutoTest(FUNC1(Simd::Sse2::AbsDifference), FUNC1(SimdAbsDifference), 1);
 #endif
 
 #ifdef SIMD_AVX2_ENABLE
-		if (Simd::Avx2::Enable && W >= Simd::Avx2::A)
+		if (Simd::Avx2::Enable && static_cast<std::size_t>(W) >= Simd::Avx2::A)
 			result = result && AbsDifferenceAutoTest(FUNC1(Simd::Avx2::AbsDifference), FUNC1(SimdAbsDifference), 1);
 #endif 
 
@@ -107,7 +107,7 @@ namespace Test
 #endif
 
 #ifdef SIMD_NEON_ENABLE
-		if (Simd::Neon::Enable && W >= Simd::Neon::A)
+		if (Simd::Neon::Enable && static_cast<std::size_t>(W) >= Simd::Neon::A)
 			result = result && AbsDifferenceAutoTest(FUNC1(Simd::Neon::AbsDifference), FUNC1(SimdAbsDifference), 1);
 #endif
 
