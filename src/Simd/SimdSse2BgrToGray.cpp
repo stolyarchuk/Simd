@@ -56,7 +56,9 @@ namespace Simd
             assert(width >= A);
 
             Buffer buffer(width);
-
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp parallel for
+#endif
             for (size_t row = 1; row < height; ++row)
             {
                 Base::BgrToBgra(bgr, width, buffer.bgra, false, false, 0xFF);

@@ -65,7 +65,9 @@ namespace Simd
                 assert(Aligned(gray) && Aligned(grayStride) && Aligned(bgr) && Aligned(bgrStride));
 
             size_t alignedWidth = AlignLo(width, A);
-
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp parallel for
+#endif
             for (size_t row = 0; row < height; ++row)
             {
                 for (size_t col = 0; col < alignedWidth; col += A)
@@ -122,7 +124,9 @@ namespace Simd
                 assert(Aligned(gray) && Aligned(grayStride) && Aligned(rgb) && Aligned(rgbStride));
 
             size_t alignedWidth = AlignLo(width, A);
-
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp parallel for
+#endif
             for (size_t row = 0; row < height; ++row)
             {
                 for (size_t col = 0; col < alignedWidth; col += A)

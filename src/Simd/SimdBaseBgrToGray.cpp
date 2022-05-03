@@ -29,6 +29,9 @@ namespace Simd
     {
         void BgrToGray(const uint8_t *bgr, size_t width, size_t height, size_t bgrStride, uint8_t *gray, size_t grayStride)
         {
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp parallel for
+#endif
             for (size_t row = 0; row < height; ++row)
             {
                 const uint8_t * pBgr = bgr + row*bgrStride;
@@ -42,6 +45,9 @@ namespace Simd
 
         void RgbToGray(const uint8_t* rgb, size_t width, size_t height, size_t rgbStride, uint8_t* gray, size_t grayStride)
         {
+#ifdef SIMD_USE_OPENMP            
+    #pragma omp parallel for
+#endif
             for (size_t row = 0; row < height; ++row)
             {
                 const uint8_t* pRgb = rgb + row * rgbStride;
