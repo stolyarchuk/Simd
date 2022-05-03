@@ -331,7 +331,7 @@ namespace Simd
                     _sin[i] = _mm_set1_ps((float)::sin(i*M_PI / Q));
                     _pos[i] = _mm_set1_epi32(i);
                 }
-                for (int i = 0; i < C; ++i)
+                for (std::size_t i = 0; i < C; ++i)
                 {
                     float k0 = float((15 - i * 2) / 16.0f);
                     float k1 = 1.0f - k0;

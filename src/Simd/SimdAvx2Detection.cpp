@@ -662,7 +662,7 @@ namespace Simd
                 {
                     uint16_t SIMD_ALIGNED(32) _result[HA];
                     _mm256_store_si256((__m256i*)_result, result);
-                    for (int i = 0; i < HA; ++i)
+                    for (std::size_t i = 0; i < HA; ++i)
                     {
                         if (_result[i])
                         {

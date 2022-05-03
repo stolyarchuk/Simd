@@ -56,8 +56,8 @@ namespace Simd
     ImageLoaderParam::ImageLoaderParam(const uint8_t* d, size_t s, SimdPixelFormatType f)
         : data(d)
         , size(s)
-        , format(f)
         , file(SimdImageFileUndefined)
+        , format(f)
     {
     }
 

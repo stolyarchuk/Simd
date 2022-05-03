@@ -331,7 +331,7 @@ namespace Simd
                     __m128 n = _mm_rsqrt_ps(_mm_add_ps(_mm_load_ps(nb), _mm256_castps256_ps128(_eps)));
                     __m128 t = _mm_setzero_ps();
                     const float * src = hf + x * FQ;
-                    for (int o = 0; o < FQ; o += 4)
+                    for (std::size_t o = 0; o < FQ; o += 4)
                     {
                         __m128 s = _mm_loadu_ps(src);
                         __m128 h0 = _mm_min_ps(_mm_mul_ps(Sse2::Broadcast<0>(s), n), _mm256_castps256_ps128(_02));

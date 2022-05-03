@@ -104,7 +104,7 @@ namespace Simd
                 for (size_t x = 0; x < _hx; ++x, h += FQ)
                 {
                     float sum = 0;
-                    for (int i = 0; i < HQ; ++i)
+                    for (std::size_t i = 0; i < HQ; ++i)
                         sum += Simd::Square(h[i] + h[i + HQ]);
                     nf.data[x] = sum;
                 }

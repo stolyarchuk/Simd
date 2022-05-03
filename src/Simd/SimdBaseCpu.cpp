@@ -78,7 +78,7 @@ namespace Simd
 #else
 #error Do not know how to detect CPU info!
 #endif
-            return (registers[index] & bit) == bit;
+            return (registers[index] & bit) == static_cast<std::uint32_t>(bit);
         }
 #endif//defined(SIMD_X86_ENABLE) || defined(SIMD_X64_ENABLE)
 

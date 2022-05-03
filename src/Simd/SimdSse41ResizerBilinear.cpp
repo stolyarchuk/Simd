@@ -75,8 +75,8 @@ namespace Simd
                         alpha = 1;
                     }
 
-                    int dst = 2 * dstIndex - _ixg[block].dst;
-                    int src = srcIndex - _ixg[block].src;
+                    std::size_t dst = 2 * dstIndex - _ixg[block].dst;
+                    std::size_t src = srcIndex - _ixg[block].src;
                     if (src >= A - 1 || dst >= A)
                     {
                         block++;

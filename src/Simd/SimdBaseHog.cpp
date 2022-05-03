@@ -267,7 +267,7 @@ namespace Simd
                     _cos[i] = (float)::cos(i*M_PI / Q);
                     _sin[i] = (float)::sin(i*M_PI / Q);
                 }
-                for (int i = 0; i < C; ++i)
+                for (std::size_t i = 0; i < C; ++i)
                     _k[i] = float((1 + i * 2) / 16.0f);
                 _index.Resize(w);
                 _value.Resize(w);
@@ -351,7 +351,7 @@ namespace Simd
                     for (size_t x = 0; x < _sx; ++x)
                     {
                         const float * h = ph + x * Q2;
-                        for (int o = 0; o < Q; ++o)
+                        for (std::size_t o = 0; o < Q; ++o)
                             pn[x] += Simd::Square(h[o] + h[o + Q]);
                     }
                 }
@@ -383,7 +383,7 @@ namespace Simd
                         float t4 = 0;
 
                         psrc = _histogram.data + ((y + 1)*_hs + x + 1)*Q2;
-                        for (int o = 0; o < Q2; o++)
+                        for (std::size_t o = 0; o < Q2; o++)
                         {
                             float h1 = Simd::Min(*psrc * n1, 0.2f);
                             float h2 = Simd::Min(*psrc * n2, 0.2f);
@@ -399,7 +399,7 @@ namespace Simd
                         }
 
                         psrc = _histogram.data + ((y + 1)*_hs + x + 1)*Q2;
-                        for (int o = 0; o < Q; o++)
+                        for (std::size_t o = 0; o < Q; o++)
                         {
                             float sum = *psrc + *(psrc + Q);
                             float h1 = Simd::Min(sum * n1, 0.2f);

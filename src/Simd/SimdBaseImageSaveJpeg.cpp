@@ -369,8 +369,8 @@ namespace Simd
 
         ImageJpegSaver::ImageJpegSaver(const ImageSaverParam& param)
             : ImageSaver(param)
-            , _deintBgra(NULL)
             , _deintBgr(NULL)
+            , _deintBgra(NULL)
             , _writeBlock(NULL)
             , _writeNv12Block(NULL)
             , _writeYuv420pBlock(NULL)

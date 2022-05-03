@@ -623,8 +623,8 @@ namespace Simd
 
         SIMD_INLINE Gemm32fNNcb CreateGemm32fNNcb(size_t M, size_t N, size_t K, GemmKernelType type, bool compatibility)
         {
-            Gemm32fNNcb::Main kernelMM, kernelMT;
-            Gemm32fNNcb::Tail kernelTM, kernelTT;
+            Gemm32fNNcb::Main kernelMM{}, kernelMT{};
+            Gemm32fNNcb::Tail kernelTM{}, kernelTT{};
             size_t microM, microN;
 #ifdef SIMD_X64_ENABLE
             if (type == GemmKernelF3 || (type == GemmKernelAny && (M == 4 || M == 8 || M == 16 || N == 24 || N == 48 || N == 96) && N > 16))

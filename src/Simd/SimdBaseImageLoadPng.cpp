@@ -143,7 +143,7 @@ namespace Simd
                     if (s >= 16)
                         return -1;
                     b = (k >> (16 - s)) - z.firstCode[s] + z.firstSymbol[s];
-                    if (b >= sizeof(z.size) || z.size[b] != s)
+                    if (static_cast<std::size_t>(b) >= sizeof(z.size) || z.size[b] != s)
                         return -1;
                     is.BitBuffer() >>= s;
                     is.BitCount() -= s;

@@ -654,7 +654,7 @@ namespace Simd
                 {
                     uint16_t SIMD_ALIGNED(16) _result[HA];
                     _mm_store_si128((__m128i*)_result, result);
-                    for (int i = 0; i < HA; ++i)
+                    for (std::size_t i = 0; i < HA; ++i)
                     {
                         if (_result[i])
                         {

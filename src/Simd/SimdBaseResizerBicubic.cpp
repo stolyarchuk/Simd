@@ -75,7 +75,7 @@ namespace Simd
             }
             _sxl = (_param.srcW - 2) * _param.channels;
             for (_xn = 0; _ix[_xn] == 0; _xn++);
-            for (_xt = _param.dstW; _ix[_xt - 1] == _sxl; _xt--);
+            for (_xt = _param.dstW; static_cast<std::size_t>(_ix[_xt - 1]) == _sxl; _xt--);
         }
 
         template<int N, int F, int L> SIMD_INLINE int32_t CubicSumX(const uint8_t* src, const int32_t* ax)

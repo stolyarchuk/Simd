@@ -268,9 +268,9 @@ namespace Simd
 
         ImagePngSaver::ImagePngSaver(const ImageSaverParam& param)
             : ImageSaver(param)
+            , _convert(NULL)
             , _channels(0)
             , _size(0)
-            , _convert(NULL)
         {
             switch (_param.format)
             {

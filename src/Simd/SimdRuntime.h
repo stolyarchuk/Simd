@@ -201,7 +201,7 @@ namespace Simd
     {
         size_t M; size_t N; size_t K; const float * alpha; const float * A; size_t lda; const float * B; size_t ldb; const float * beta; float * C; size_t ldc;
         SIMD_INLINE GemmArgs(size_t M_, size_t N_, size_t K_, const float * alpha_, const float * A_, size_t lda_, const float * B_, size_t ldb_, const float * beta_, float * C_, size_t ldc_)
-            :M(M_), N(N_), K(K_), alpha(alpha_), A(A_), lda(lda_), B(B_), ldb(ldb_), beta(beta_), ldc(ldc_), C(C_) 
+            :M(M_), N(N_), K(K_), alpha(alpha_), A(A_), lda(lda_), B(B_), ldb(ldb_), beta(beta_), C(C_) , ldc(ldc_) 
         {}
     };
 
